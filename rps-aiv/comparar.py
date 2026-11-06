@@ -5,6 +5,8 @@ Uso:
   python comparar.py
 """
 
+a = 0
+
 import json
 from pathlib import Path
 
