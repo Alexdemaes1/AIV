@@ -1,5 +1,0 @@
-tensorflow>=2.16
-roboflow
-matplotlib
-numpy
-opencv-python
