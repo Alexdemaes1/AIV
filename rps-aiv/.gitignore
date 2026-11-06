@@ -1,0 +1,14 @@
+# Datos y modelos: no van al repo
+data/
+modelos/
+*.keras
+*.h5
+
+# Claves
+.env
+
+# Python
+__pycache__/
+.venv/
+venv/
+.ipynb_checkpoints/
