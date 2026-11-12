@@ -10,8 +10,8 @@ import keras
 from keras import layers
 
 # 1. Transformación de los datos
-TAM_IMAGEN = None   # TODO: (alto, ancho) que espera AlexNet
-MODO_COLOR = None   # TODO: "grayscale" o "rgb"
+TAM_IMAGEN = (227, 227)   # TODO: (alto, ancho) que espera AlexNet
+MODO_COLOR = "rgb"   # TODO: "grayscale" o "rgb"
 
 HIPERPARAMETROS = {"epocas": 20, "lote": 32, "lr": 1e-4}
 
@@ -23,6 +23,22 @@ def crear_modelo(num_clases):
         layers.Rescaling(1 / 255),   # píxeles de 0-255 a 0-1
         # 2. TODO: las 5 convoluciones con sus max pooling, el aplanado
         #    y las dos densas de 4096 con dropout
+        
+        layers.Conv2D(),
+        layers.MaxPooling2D(),
+        layers.Conv2D(),
+        layers.MaxPooling2D(),
+        layers.Conv2D(),
+        layers.MaxPooling2D(),
+        layers.Conv2D(),
+        layers.MaxPooling2D(),
+        layers.Conv2D(),
+        layers.MaxPooling2D(),
+        layers.Flatten(),
+        layers.Dense(),
+        layers.Dropout(),
+        layers.Dense(),
+        layers.Dropout(),
 
         layers.Dense(num_clases, activation="softmax"),
     ], name="alexnet")
