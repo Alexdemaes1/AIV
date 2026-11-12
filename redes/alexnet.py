@@ -24,21 +24,19 @@ def crear_modelo(num_clases):
         # 2. TODO: las 5 convoluciones con sus max pooling, el aplanado
         #    y las dos densas de 4096 con dropout
         
-        layers.Conv2D(),
-        layers.MaxPooling2D(),
-        layers.Conv2D(),
-        layers.MaxPooling2D(),
-        layers.Conv2D(),
-        layers.MaxPooling2D(),
-        layers.Conv2D(),
-        layers.MaxPooling2D(),
-        layers.Conv2D(),
-        layers.MaxPooling2D(),
+        layers.Conv2D(filters=96, kernel_size=11, strides=4, activation="relu"),
+        layers.MaxPooling2D(pool_size=3, strides=2),
+        layers.Conv2D(filters=256, kernel_size=5, padding="same", activation="relu"),
+        layers.MaxPooling2D(pool_size=3, strides=2),
+        layers.Conv2D(filters=384, kernel_size=3, padding="same", activation="relu"),
+        layers.Conv2D(filters=384, kernel_size=3, padding="same", activation="relu"),
+        layers.Conv2D(filters=256, kernel_size=3, padding="same", activation="relu"),
+        layers.MaxPooling2D(pool_size=3, strides=2),
         layers.Flatten(),
-        layers.Dense(),
-        layers.Dropout(),
-        layers.Dense(),
-        layers.Dropout(),
+        layers.Dense(units=4096, activation="relu"),
+        layers.Dropout(rate=0.5),
+        layers.Dense(units=4096, activation="relu"),
+        layers.Dropout(rate=0.5),
 
         layers.Dense(num_clases, activation="softmax"),
     ], name="alexnet")
