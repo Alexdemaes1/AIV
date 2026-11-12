@@ -3,3 +3,4 @@ roboflow
 matplotlib
 numpy
 opencv-python
+python-dotenv

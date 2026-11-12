@@ -1,8 +1,11 @@
 """
 Descarga el dataset de piedra, papel o tijera desde Roboflow a data/.
 
-Antes de ejecutarlo, pon tu clave de Roboflow en una variable de entorno
-(nunca en el código):
+Antes de ejecutarlo, pon tu clave de Roboflow en un archivo .env en la raíz
+del repo (ya está en .gitignore, nunca se sube), con esta línea:
+  ROBOFLOW_API_KEY=tu_clave
+
+También vale una variable de entorno:
   Windows:     set ROBOFLOW_API_KEY=tu_clave
   Linux/Mac:   export ROBOFLOW_API_KEY=tu_clave
 
@@ -14,9 +17,13 @@ import os
 import shutil
 from pathlib import Path
 
+from dotenv import load_dotenv
+
+load_dotenv()  # carga .env en las variables de entorno
+
 # El profesor rellena estos tres valores en el primer commit (salen de la URL de Roboflow)
-WORKSPACE = "CAMBIAR"
-PROYECTO = "CAMBIAR"
+WORKSPACE = "aiv-4nngu"
+PROYECTO = "piedra-papel-o-tijera-csidi"
 VERSION = 1
 
 DESTINO = Path("data")
@@ -25,7 +32,7 @@ DESTINO = Path("data")
 def main():
     clave = os.environ.get("ROBOFLOW_API_KEY")
     if not clave:
-        raise SystemExit("Falta la variable de entorno ROBOFLOW_API_KEY")
+        raise SystemExit("Falta ROBOFLOW_API_KEY (ponla en .env o como variable de entorno)")
     if "CAMBIAR" in (WORKSPACE, PROYECTO):
         raise SystemExit("Rellena WORKSPACE y PROYECTO en descargar_datos.py")
 
