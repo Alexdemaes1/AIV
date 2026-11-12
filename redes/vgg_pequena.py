@@ -4,6 +4,8 @@ Tu trabajo en este archivo:
   1. Transformar los datos lo justo para que encajen en la entrada de la red.
   2. Construir la red capa a capa siguiendo la tabla de la actividad.
 Comprueba con model.summary() (sale al entrenar) que cada capa da el tamaño de la tabla.
+
+Encargado a Vicente
 """
 
 import keras
