@@ -1,0 +1,40 @@
+{
+  "red": "lenet",
+  "entrada": [
+    32,
+    32,
+    1
+  ],
+  "parametros": 61111,
+  "epocas": 30,
+  "segundos_por_epoca": 1.9,
+  "accuracy_test": 0.9367,
+  "perdida_test": 0.208,
+  "clases": [
+    "paper",
+    "rock",
+    "scissors"
+  ],
+  "matriz_confusion": [
+    [
+      64,
+      2,
+      6
+    ],
+    [
+      3,
+      69,
+      1
+    ],
+    [
+      1,
+      1,
+      74
+    ]
+  ],
+  "hiperparametros": {
+    "epocas": 30,
+    "lote": 32,
+    "lr": 0.001
+  }
+}
