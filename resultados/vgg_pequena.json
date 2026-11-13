@@ -1,0 +1,40 @@
+{
+  "red": "vgg_pequena",
+  "entrada": [
+    64,
+    64,
+    3
+  ],
+  "parametros": 2385187,
+  "epocas": 15,
+  "segundos_por_epoca": 8.5,
+  "accuracy_test": 0.9955,
+  "perdida_test": 0.0098,
+  "clases": [
+    "paper",
+    "rock",
+    "scissors"
+  ],
+  "matriz_confusion": [
+    [
+      71,
+      0,
+      1
+    ],
+    [
+      0,
+      73,
+      0
+    ],
+    [
+      0,
+      0,
+      76
+    ]
+  ],
+  "hiperparametros": {
+    "epocas": 30,
+    "lote": 32,
+    "lr": 0.001
+  }
+}

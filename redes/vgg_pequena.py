@@ -12,8 +12,8 @@ import keras
 from keras import layers
 
 # 1. Transformación de los datos
-TAM_IMAGEN = None   # TODO: (alto, ancho) de la entrada
-MODO_COLOR = None   # TODO: "grayscale" o "rgb"
+TAM_IMAGEN = (64, 64)
+MODO_COLOR = "rgb"
 
 HIPERPARAMETROS = {"epocas": 30, "lote": 32, "lr": 1e-3}
 
@@ -23,8 +23,23 @@ def crear_modelo(num_clases):
     return keras.Sequential([
         keras.Input(shape=(*TAM_IMAGEN, canales)),
         layers.Rescaling(1 / 255),   # píxeles de 0-255 a 0-1
-        # 2. TODO: tres bloques (dos conv 3x3 + max pooling cada uno),
-        #    el aplanado, la densa de 256 con dropout
+        # Bloque 1
+        layers.Conv2D(32, 3, padding="same", activation="relu"),
+        layers.Conv2D(32, 3, padding="same", activation="relu"),
+        layers.MaxPooling2D(pool_size=2),
 
+        # Bloque 2
+        layers.Conv2D(64, 3, padding="same", activation="relu"),
+        layers.Conv2D(64, 3, padding="same", activation="relu"),
+        layers.MaxPooling2D(pool_size=2),
+
+        # Bloque 3
+        layers.Conv2D(128, 3, padding="same", activation="relu"),
+        layers.Conv2D(128, 3, padding="same", activation="relu"),
+        layers.MaxPooling2D(pool_size=2),
+
+        layers.Flatten(),
+        layers.Dense(256, activation="relu"),
+        layers.Dropout(0.5),
         layers.Dense(num_clases, activation="softmax"),
     ], name="vgg_pequena")

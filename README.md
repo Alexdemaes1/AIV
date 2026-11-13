@@ -40,4 +40,4 @@ python probar_webcam.py --red lenet     # prueba tu red con la webcam (q para sa
 | --- | --- | --- | --- | --- | --- |
 | LeNet-5 | | | | | |
 | AlexNet | | | | | |
-| VGG pequeña | | | | | |
+| VGG pequeña | Vicente | 64×64 RGB | 2.385.187 | 8.5 | 99,55 % |
