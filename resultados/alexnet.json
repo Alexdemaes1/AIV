@@ -1,0 +1,40 @@
+{
+  "red": "alexnet",
+  "entrada": [
+    227,
+    227,
+    3
+  ],
+  "parametros": 58293635,
+  "epocas": 20,
+  "segundos_por_epoca": 53.8,
+  "accuracy_test": 0.9955,
+  "perdida_test": 0.0104,
+  "clases": [
+    "paper",
+    "rock",
+    "scissors"
+  ],
+  "matriz_confusion": [
+    [
+      72,
+      0,
+      0
+    ],
+    [
+      1,
+      72,
+      0
+    ],
+    [
+      0,
+      0,
+      76
+    ]
+  ],
+  "hiperparametros": {
+    "epocas": 20,
+    "lote": 32,
+    "lr": 0.0001
+  }
+}

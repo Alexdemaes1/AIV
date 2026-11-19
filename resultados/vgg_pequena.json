@@ -6,10 +6,10 @@
     3
   ],
   "parametros": 2385187,
-  "epocas": 15,
-  "segundos_por_epoca": 8.5,
-  "accuracy_test": 0.9955,
-  "perdida_test": 0.0098,
+  "epocas": 18,
+  "segundos_por_epoca": 6.8,
+  "accuracy_test": 0.991,
+  "perdida_test": 0.0204,
   "clases": [
     "paper",
     "rock",
@@ -17,8 +17,8 @@
   ],
   "matriz_confusion": [
     [
-      71,
-      0,
+      70,
+      1,
       1
     ],
     [
