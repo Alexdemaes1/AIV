@@ -43,7 +43,7 @@ for imagenes, etiquetas in train_ds.take(1):
     print("Dimensiones de las imágenes:", imagenes.shape)
     print("Dimensiones de las etiquetas:", etiquetas.shape)
 
-HIPERPARAMETROS = {"epocas": 30, "lote": 32, "lr": 1e-3}
+HIPERPARAMETROS = {"epocas": 17, "lote": 32, "lr": 1e-3}
 
 
 def crear_modelo(num_clases):
